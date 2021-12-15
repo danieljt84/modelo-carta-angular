@@ -4,6 +4,8 @@ import { CartaSimples } from '../model/CartaSimples';
 import { ApiService } from '../service/api.service';
 import { Validators } from '@angular/forms';
 import {formatDate} from '@angular/common';
+import * as FileSaver from 'file-saver';
+
 
 @Component({
   selector: 'app-filter-menu',
@@ -56,7 +58,11 @@ export class FilterMenuComponent implements OnInit {
   onSubmit(){
     const newCartaSimple = this.filter.getRawValue() as CartaSimples;
     this.apiService
-    .downloadDocument(this.filter.value);
+    .downloadDocument(newCartaSimple).subscribe((data) => {
+      FileSaver.saveAs(data, 'yourFilename.docx');
+    },
+    (error)=> alert(error));
+    this.createForm(new CartaSimples());
   }
 
 }

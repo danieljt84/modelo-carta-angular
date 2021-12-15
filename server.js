@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static(__dirname + "/dist/modelo-carta"));
 
 app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname + "/dist/NOME_DO_SEU_PROJETO/index.html"));
+  res.sendFile(path.join(__dirname + "/dist/modelo-carta/index.html"));
 });
 
 // Inicia a aplicação pela porta configurada

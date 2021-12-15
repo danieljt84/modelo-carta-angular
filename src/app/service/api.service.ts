@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CartaSimples } from '../model/CartaSimples';
-import * as FileSaver from 'file-saver';
 
 
 @Injectable({
@@ -14,8 +13,6 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   downloadDocument(cartaSimples: CartaSimples) {
-    this.http.post(this.url, cartaSimples, {responseType: 'blob'}).subscribe(data => {
-      FileSaver.saveAs(data, 'yourFilename.docx');
-    });
+    return this.http.post(this.url, cartaSimples, {responseType: 'blob'})
   }
 }
