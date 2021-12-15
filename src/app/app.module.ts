@@ -1,16 +1,30 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FilterMenuComponent } from './filter-menu/filter-menu.component';
+import { HttpClientModule } from '@angular/common/http';
+import { VMessageComponent } from './vmessage/vmessage.component';
+import { IConfig, NgxMaskModule } from 'ngx-mask';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FilterMenuComponent,
+    VMessageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgxMaskModule.forRoot({
+      dropSpecialCharacters: false
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
