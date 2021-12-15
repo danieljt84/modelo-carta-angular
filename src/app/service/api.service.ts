@@ -8,7 +8,7 @@ import { CartaSimples } from '../model/CartaSimples';
 })
 export class ApiService {
 
-  private url: string = "http://localhost:8080/"
+  private url: string = "https://modelo-carta-spring.herokuapp.com/"
 
   constructor(private http: HttpClient) { }
 
