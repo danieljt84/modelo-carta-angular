@@ -8,11 +8,23 @@ import { CartaSimples } from '../model/CartaSimples';
 })
 export class ApiService {
 
-  private url: string = "https://modelo-carta-spring.herokuapp.com/"
+  private urlPublic: string = "https://modelo-carta-spring.herokuapp.com/"
 
   constructor(private http: HttpClient) { }
 
   downloadDocument(cartaSimples: CartaSimples) {
-    return this.http.post(this.url, cartaSimples, {responseType: 'blob'})
-  }
+    this.http.post(this.urlPublic, cartaSimples, {responseType: 'blob'}).subscribe(data => {
+      const file = new Blob ([data], {
+        type: data.type
+      })
+      const blob = window.URL.createObjectURL(file);
+      const link = document.createElement('a');
+      
+      link.href = blob;
+      link.download = "CARTA.docx"
+      link.click();
+      window.URL.revokeObjectURL(blob);
+      link.remove();
+   });
+ }
 }

@@ -58,10 +58,7 @@ export class FilterMenuComponent implements OnInit {
   onSubmit(){
     const newCartaSimple = this.filter.getRawValue() as CartaSimples;
     this.apiService
-    .downloadDocument(newCartaSimple).subscribe((data) => {
-      FileSaver.saveAs(data, 'yourFilename.docx');
-    },
-    (error)=> alert(error));
+    .downloadDocument(newCartaSimple);
     this.createForm(new CartaSimples());
   }
 
