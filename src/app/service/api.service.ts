@@ -14,7 +14,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   downloadDocument(cartaSimples: CartaSimples) {
-    this.http.post(this.url, cartaSimples, {responseType: 'blob'}).subscribe(data => {
+    this.http.post(this.urlPublic, cartaSimples, {responseType: 'blob'}).subscribe(data => {
       const file = new Blob ([data], {
         type: "data"
       })
