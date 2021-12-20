@@ -56,7 +56,7 @@
             <label for="serie">
                 Serie Cart. Trabalho
             </label>
-            <input id="serie" class="form-control" minlength="3" maxlength="4" type="text" formControlName="serie">
+            <input id="serie" maxlength="4" minlength="3" class="form-control" type="text" formControlName="serie">
             <ap-vmessage
             *ngIf="filter.get('serie').errors?.required && (filter.get('serie').dirty || filter.get('serie').touched)"
             text="Serie da carteira é necessário">
@@ -74,7 +74,7 @@
           </div>
           <div class="form-group col-md-3">
             <label for="nomeEmpresa">Escolha a empresa:</label>
-            <select id="nomeEmpresa" class="form-control" name="nomeEmpresa" formControlName="nomeEmpresa">
+            <select (change)="getFormValidationErrors()" id="nomeEmpresa" class="form-control" name="nomeEmpresa" formControlName="nomeEmpresa">
               <option value="A MULTI MERCHAN LTDA">A MULTI MERCHAN LTDA</option>
               <option value="CRIART CRIACOES PROMOCIONAIS EIRELI">CRIART CRIAÇÕES PROMOCIONAIS EIRELI</option>
               <option value="PINCELART SERVICOS PROMOCIONAIS EIRELI">PINCELART SERVIÇOS PROMOCIONAIS EIRELI</option>
@@ -83,6 +83,6 @@
           </div>
         </div>
     <div class="form-group row">
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" [disabled]="!filter.valid" class="btn btn-primary">Enviar</button>
     </div>
 </form>

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FilterMenuComponent } from './filter-menu/filter-menu.component';
@@ -22,6 +21,7 @@ import { IConfig, NgxMaskModule } from 'ngx-mask';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,    
     NgxMaskModule.forRoot({
       dropSpecialCharacters: false
     })

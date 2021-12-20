@@ -34,10 +34,10 @@ export class FilterMenuComponent implements OnInit {
       enderecoLoja:new FormControl('',Validators.required),
       nomePromotor:new FormControl('',Validators.required),
       cartPromotor:new FormControl('',Validators.required),
-      serie:new FormControl('',Validators.required),
+      serie:new FormControl('',[Validators.minLength(3),Validators.maxLength(4),Validators.required]),
       identidade:new FormControl(
         '',
-        [Validators.max(9),Validators.min(9),Validators.required]),
+        [Validators.maxLength(12),Validators.minLength(12),Validators.required]),
         nomeEmpresa: new FormControl('', Validators.required)
     });
 
