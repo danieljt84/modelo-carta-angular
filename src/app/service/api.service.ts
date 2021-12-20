@@ -15,7 +15,7 @@ export class ApiService {
   downloadDocument(cartaSimples: CartaSimples) {
     this.http.post(this.urlPublic, cartaSimples, {responseType: 'blob'}).subscribe(data => {
       const file = new Blob ([data], {
-        type: data.type
+        type: "data"
       })
       const blob = window.URL.createObjectURL(file);
       const link = document.createElement('a');
