@@ -16,7 +16,7 @@ import { CartaSimplesSpComponent } from './carta-simples-sp/carta-simples-sp.com
     AppComponent,
     FilterMenuComponent,
     VMessageComponent,
-    CartaSimplesSpComponent
+    CartaSimplesSpComponent,
   ],
   imports: [
     BrowserModule,

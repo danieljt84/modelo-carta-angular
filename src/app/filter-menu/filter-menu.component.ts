@@ -24,7 +24,6 @@ export class FilterMenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.createForm(new CartaSimples());
-    console.log(new Date);
   }
 
   createForm(cartaSimples: CartaSimples){
@@ -56,9 +55,9 @@ export class FilterMenuComponent implements OnInit {
     }
 
   onSubmit(){
-    const newCartaSimple = this.filter.getRawValue() as CartaSimples;
+    const newCartaSimples = this.filter.getRawValue() as CartaSimples;
     this.apiService
-    .downloadCartaSimples(newCartaSimple);
+    .downloadCarta(newCartaSimples,'cartasimples');
     this.createForm(new CartaSimples());
   }
 

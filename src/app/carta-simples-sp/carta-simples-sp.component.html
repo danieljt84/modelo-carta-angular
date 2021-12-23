@@ -1,1 +1,112 @@
-<p>carta-simples-sp works!</p>
+<form [formGroup]="filter" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label for="data">
+                Data
+            </label>
+            <input id="data" class="form-control" type="date" formControlName="data">
+            <ap-vmessage
+                *ngIf="filter.get('data').errors?.required && (filter.get('data').dirty || filter.get('data').touched)"
+                text="Data invalida">
+            </ap-vmessage>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="local">
+                Local
+            </label>
+            <input id="localLoja" class="form-control" [mask]="'S* S* S* S* S* S*'" [dropSpecialCharacters]="false"
+                type="text" formControlName="localLoja">
+            <ap-vmessage
+                *ngIf="filter.get('localLoja').errors?.required && (filter.get('localLoja').dirty || filter.get('localLoja').touched)"
+                text="localLoja">
+            </ap-vmessage>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="endereco">
+                Endereço da Loja
+            </label>
+            <input id="enderecoLoja" class="form-control" type="text" formControlName="enderecoLoja">
+            <ap-vmessage
+                *ngIf="filter.get('enderecoLoja').errors?.required && (filter.get('enderecoLoja').dirty || filter.get('enderecoLoja').touched)"
+                text="Endereço da loja é necessário">
+            </ap-vmessage>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="empresaContratante">
+                Empresa Contratante
+            </label>
+            <input id="empresaContratante" class="form-control" type="text" formControlName="empresaContratante">
+            <ap-vmessage
+                *ngIf="filter.get('empresaContratante').errors?.required && (filter.get('empresaContratante').dirty || filter.get('enderecoLoja').touched)"
+                text="Empresa Contratante é necessário">
+            </ap-vmessage>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label for="nomePromotor">
+                Nome Promotor
+            </label>
+            <input id="nomePromotor" class="form-control" [mask]="'S* S* S* S* S* S*'" [dropSpecialCharacters]="false"
+                type="text" formControlName="nomePromotor">
+            <ap-vmessage
+                *ngIf="filter.get('nomePromotor').errors?.required && (filter.get('nomePromotor').dirty || filter.get('nomePromotor').touched)"
+                text="Nome do Promotor é necessário">
+            </ap-vmessage>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="cartPromotor">
+                Número da Cart. Trabalho
+            </label>
+            <input id="cartPromotor" class="form-control" mask="0*" maxlength="13" type="text"
+                formControlName="cartPromotor">
+            <ap-vmessage
+                *ngIf="filter.get('cartPromotor').errors?.required && (filter.get('cartPromotor').dirty || filter.get('cartPromotor').touched)"
+                text="Número da carteira é necessário">
+            </ap-vmessage>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="serie">
+                Serie Cart. Trabalho
+            </label>
+            <input id="serie" maxlength="4" minlength="3" class="form-control" type="text" formControlName="serie">
+            <ap-vmessage
+                *ngIf="filter.get('serie').errors?.required && (filter.get('serie').dirty || filter.get('serie').touched)"
+                text="Serie da carteira é necessário">
+            </ap-vmessage>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="identidade">
+                Identidade Promotor
+            </label>
+            <input id="identidade" class="form-control" type="text" mask="00.000.000-0" formControlName="identidade">
+            <ap-vmessage
+                *ngIf="filter.get('identidade').errors?.required && (filter.get('identidade').dirty || filter.get('identidade').touched)"
+                text="identidade é necessário">
+            </ap-vmessage>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="cpf">
+                CPF Promotor
+            </label>
+            <input id="cpf" class="form-control" type="text" mask="000-000-000-00" formControlName="cpf">
+            <ap-vmessage
+                *ngIf="filter.get('cpf').errors?.required && (filter.get('cpf').dirty || filter.get('cpf').touched)"
+                text="CPF é necessário">
+            </ap-vmessage>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="nomeEmpresa">Escolha a empresa:</label>
+            <select id="nomeEmpresa" class="form-control" name="nomeEmpresa"
+                formControlName="nomeEmpresa">
+                <option value="A MULTI MERCHAN LTDA">A MULTI MERCHAN LTDA</option>
+                <option value="CRIART CRIACOES PROMOCIONAIS EIRELI">CRIART CRIAÇÕES PROMOCIONAIS EIRELI</option>
+                <option value="PINCELART SERVICOS PROMOCIONAIS EIRELI">PINCELART SERVIÇOS PROMOCIONAIS EIRELI</option>
+                <option value="4P PROMOCOES E EVENTOS">4P PROMOCOES E EVENTOS</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <button type="submit" [disabled]="!filter.valid" class="btn btn-primary">Enviar</button>
+    </div>
+</form>

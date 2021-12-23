@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from '@angular/router'; //or updated version
 
 
 @Component({
@@ -9,5 +10,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'modelo-carta';
 
-  constructor(){}
+  constructor(private router: Router){}
+
+  navigateTo(value) {
+    if (value) {
+        this.router.navigate([value]);
+    }
+    return false;
+}
 }

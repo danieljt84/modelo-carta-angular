@@ -1,4 +1,4 @@
-export class ModeloCarta {
+export class CartaSimplesSp{
     data: Date;
     localLoja: string;
     enderecoLoja: String;
@@ -7,4 +7,6 @@ export class ModeloCarta {
     serie: number;
     identidade: number;
     nomeEmpresa: string;
+    cpf: string;
+    empresaContratante: string;
 }

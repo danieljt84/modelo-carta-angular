@@ -302,6 +302,14 @@
   <span>Modelo Carta</span>
 </div>
 
-<div class="content" style="padding: 0 0 0 0;" >
+<div class="content" style="padding: 0 0 0 0;">
+  <div class="d-flex justify-content-between">
+    <label for="router">Escolha o modelo de carta</label>
+    <select id="router" class="form-control" name="router" (change)="navigateTo($event.target.value)">
+      <option value="cartasimples" value = "cartasimples">CARTA SIMPLES RJ</option>
+      <option value="cartasimplessp" value = "cartasimplessp">CARTA SIMPLES SP</option>
+    </select>
+  </div>
+  <br>
   <router-outlet></router-outlet>
 </div>
