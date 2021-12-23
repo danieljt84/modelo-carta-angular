@@ -1,4 +1,4 @@
-export abstract class ModeloCarta {
+export  class ModeloCarta {
     private data: Date;
     private localLoja: string;
     private enderecoLoja:String;
@@ -6,6 +6,7 @@ export abstract class ModeloCarta {
     private cartPromotor: String;
     private serie: number;
     private identidade: number;
+    private nomeEmpresa: string;
 
     /**
      * Getter $data
@@ -134,14 +135,4 @@ export abstract class ModeloCarta {
 	public set $nomeEmpresa(value: string) {
 		this.nomeEmpresa = value;
 	}
-    private nomeEmpresa: string;
-    constructor(parameters) {}
-
-
-
-    
-
-
-
-
 }
