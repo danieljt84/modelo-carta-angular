@@ -7,6 +7,7 @@ import { FilterMenuComponent } from './filter-menu/filter-menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { VMessageComponent } from './vmessage/vmessage.component';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
+import { CartaSimplesSpComponent } from './carta-simples-sp/carta-simples-sp.component';
 
 
 
@@ -14,7 +15,8 @@ import { IConfig, NgxMaskModule } from 'ngx-mask';
   declarations: [
     AppComponent,
     FilterMenuComponent,
-    VMessageComponent
+    VMessageComponent,
+    CartaSimplesSpComponent
   ],
   imports: [
     BrowserModule,

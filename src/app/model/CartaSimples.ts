@@ -1,11 +1,5 @@
+import { ModeloCarta } from "./ModeloCarta";
 
-export class CartaSimples {
-    data: Date;
-    localLoja: string;
-    enderecoLoja:String;
-    nomePromotor: String;
-    cartPromotor: String;
-    serie: number;
-    identidade: number;
-    nomeEmpresa: string;
+export class CartaSimples extends ModeloCarta {
+    
 }
