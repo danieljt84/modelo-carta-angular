@@ -306,10 +306,15 @@
   <div class="d-flex justify-content-between">
     <label for="router">Escolha o modelo de carta</label>
     <select id="router" class="form-control" name="router" (change)="navigateTo($event.target.value)">
-      <option value="cartasimples" value = "cartasimples">CARTA SIMPLES RJ</option>
-      <option value="cartasimplessp" value = "cartasimplessp">CARTA SIMPLES SP</option>
+      <option value="cartasimples" value="cartasimples" >CARTA SIMPLES RJ</option>
+      <option value="cartasimplessp" value="cartasimplessp">CARTA SIMPLES SP</option>
     </select>
   </div>
   <br>
-  <router-outlet></router-outlet>
+  <ng-container *ngIf="route === 'cartasimples' ">
+    <app-filter-menu></app-filter-menu>
+  </ng-container>
+  <ng-container *ngIf="route === 'cartasimplessp' ">
+    <app-carta-simples-sp></app-carta-simples-sp>
+  </ng-container>
 </div>

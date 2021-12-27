@@ -1,5 +1,5 @@
 import { formatDate } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CartaSimplesSp } from '../model/CartaSimplesSp';
 import { ApiService } from '../service/api.service';
@@ -9,13 +9,16 @@ import { ApiService } from '../service/api.service';
   templateUrl: './carta-simples-sp.component.html',
   styleUrls: ['./carta-simples-sp.component.css']
 })
-export class CartaSimplesSpComponent implements OnInit {
+export class CartaSimplesSpComponent implements OnInit,DoCheck {
 
   cartaSimplesSp: CartaSimplesSp;
   filter: FormGroup;
   dataHoje: string;
   constructor(private formBuilder: FormBuilder, private apiService: ApiService) {
     this.dataHoje = formatDate(new Date(), 'yyyy-MM-dd', 'en');
+  }
+  ngDoCheck(): void {
+    console.log("oi");
   }
 
   ngOnInit(): void {
