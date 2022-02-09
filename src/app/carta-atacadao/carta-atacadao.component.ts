@@ -1,17 +1,16 @@
 import { formatDate } from '@angular/common';
-import { Component, DoCheck, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { CartaSimplesSp } from '../model/CartaSimplesSp';
+import { CartaAtacadao } from '../model/CartaAtacadao';
 import { ApiService } from '../service/api.service';
 
 @Component({
-  selector: 'app-carta-simples-sp',
-  templateUrl: './carta-simples-sp.component.html',
-  styleUrls: ['./carta-simples-sp.component.css']
+  selector: 'app-carta-atacadao',
+  templateUrl: './carta-atacadao.component.html',
+  styleUrls: ['./carta-atacadao.component.css']
 })
-export class CartaSimplesSpComponent implements OnInit,DoCheck {
-
-  cartaSimplesSp: CartaSimplesSp;
+export class CartaAtacadaoComponent implements OnInit {
+  cartaSimplesSp: CartaAtacadao;
   filter: FormGroup;
   dataHoje: string;
   constructor(private formBuilder: FormBuilder, private apiService: ApiService) {
@@ -22,14 +21,13 @@ export class CartaSimplesSpComponent implements OnInit,DoCheck {
   }
 
   ngOnInit(): void {
-    this.createForm(new CartaSimplesSp());
+    this.createForm(new CartaAtacadao());
   }
 
-  createForm(cartaSimples: CartaSimplesSp) {
+  createForm(CartaAtacadao: CartaAtacadao) {
     this.filter = this.formBuilder.group({
       data: new FormControl(this.dataHoje, Validators.required),
-      localLoja: new FormControl('', Validators.required),
-      enderecoLoja: new FormControl('', Validators.required),
+      estado: new FormControl('', Validators.required),
       nomePromotor: new FormControl('', Validators.required),
       cartPromotor: new FormControl('', Validators.required),
       serie: new FormControl('',[Validators.minLength(3), Validators.maxLength(4), Validators.required]),
@@ -41,10 +39,9 @@ export class CartaSimplesSpComponent implements OnInit,DoCheck {
   }
 
   onSubmit(){
-    const newCartaSimplesSp = this.filter.getRawValue() as CartaSimplesSp;
+    const newCartaAtacadao = this.filter.getRawValue() as CartaAtacadao;
     this.apiService
-    .downloadCarta(newCartaSimplesSp,"cartasimplessp");
-    this.createForm(new CartaSimplesSp());
+    .downloadCarta(newCartaAtacadao,"cartaatacadao");
+    this.createForm(new CartaAtacadao());
   }
-
 }

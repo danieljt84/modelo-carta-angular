@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { VMessageComponent } from './vmessage/vmessage.component';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 import { CartaSimplesSpComponent } from './carta-simples-sp/carta-simples-sp.component';
+import { CartaAtacadaoComponent } from './carta-atacadao/carta-atacadao.component';
 
 
 
@@ -17,6 +18,7 @@ import { CartaSimplesSpComponent } from './carta-simples-sp/carta-simples-sp.com
     FilterMenuComponent,
     VMessageComponent,
     CartaSimplesSpComponent,
+    CartaAtacadaoComponent,
   ],
   imports: [
     BrowserModule,

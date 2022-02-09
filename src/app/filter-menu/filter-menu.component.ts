@@ -19,7 +19,7 @@ export class FilterMenuComponent implements OnInit {
   dataHoje: string ;
 
   constructor(private formBuilder: FormBuilder, private apiService: ApiService) {
-  this.dataHoje = formatDate(new Date(), 'yyyy-MM-dd', 'en');
+    this.dataHoje = formatDate(new Date(), 'yyyy-MM-dd', 'en');
   }
 
   ngOnInit(): void {
