@@ -15,7 +15,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   downloadCarta(cartaSimplesSp: any,type:string) {
-    this.http.post(this.url+type, cartaSimplesSp, {responseType: 'blob'}).subscribe(data => {
+    this.http.post(this.urlPublic+type, cartaSimplesSp, {responseType: 'blob'}).subscribe(data => {
       const file = new Blob ([data], {
         type: "data"
       })
