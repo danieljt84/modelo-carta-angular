@@ -58,7 +58,7 @@ export class FilterMenuComponent implements OnInit {
     const newCartaSimples = this.filter.getRawValue() as CartaSimples;
     this.apiService
     .downloadCarta(newCartaSimples,'cartasimples');
-    this.createForm(new CartaSimples());
+    //this.createForm(new CartaSimples());
   }
 
 }
