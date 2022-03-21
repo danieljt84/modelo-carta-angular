@@ -42,6 +42,6 @@ export class CartaAtacadaoComponent implements OnInit {
     const newCartaAtacadao = this.filter.getRawValue() as CartaAtacadao;
     this.apiService
     .downloadCarta(newCartaAtacadao,"cartaatacadao");
-    this.createForm(new CartaAtacadao());
+   //this.createForm(new CartaAtacadao());
   }
 }

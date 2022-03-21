@@ -44,7 +44,7 @@ export class CartaSimplesSpComponent implements OnInit,DoCheck {
     const newCartaSimplesSp = this.filter.getRawValue() as CartaSimplesSp;
     this.apiService
     .downloadCarta(newCartaSimplesSp,"cartasimplessp");
-    this.createForm(new CartaSimplesSp());
+    //this.createForm(new CartaSimplesSp());
   }
 
 }
