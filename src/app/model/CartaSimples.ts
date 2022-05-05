@@ -7,6 +7,6 @@ export class CartaSimples{
     private nomePromotor: String;
     private cartPromotor: String;
     private serie: number;
-    private identidade: number;
+    private identidade: string;
     private nomeEmpresa: string;
 }

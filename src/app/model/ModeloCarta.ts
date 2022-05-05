@@ -4,7 +4,7 @@ export class ModeloCarta {
     enderecoLoja: String;
     nomePromotor: String;
     cartPromotor: String;
-    serie: number;
-    identidade: number;
+    serie: string;
+    identidade: string;
     nomeEmpresa: string;
 }

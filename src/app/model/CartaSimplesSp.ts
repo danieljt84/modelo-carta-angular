@@ -4,8 +4,8 @@ export class CartaSimplesSp{
     enderecoLoja: String;
     nomePromotor: String;
     cartPromotor: String;
-    serie: number;
-    identidade: number;
+    serie: string;
+    identidade: string;
     nomeEmpresa: string;
     cpf: string;
     empresaContratante: string;

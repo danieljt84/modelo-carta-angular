@@ -9,7 +9,10 @@ import { VMessageComponent } from './vmessage/vmessage.component';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 import { CartaSimplesSpComponent } from './carta-simples-sp/carta-simples-sp.component';
 import { CartaAtacadaoComponent } from './carta-atacadao/carta-atacadao.component';
-
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -25,7 +28,11 @@ import { CartaAtacadaoComponent } from './carta-atacadao/carta-atacadao.componen
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule,    
+    FormsModule,
+    MatInputModule,
+    MatIconModule,
+    MatButtonModule,
+    MatAutocompleteModule,    
     NgxMaskModule.forRoot({
       dropSpecialCharacters: false
     })
