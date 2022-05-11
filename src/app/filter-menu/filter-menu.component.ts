@@ -108,6 +108,7 @@ export class FilterMenuComponent implements OnInit {
     this.filter.get('serie').setValue(this.employeerSelected.serieCtps);
     this.filter.get('identidade').setValue(this.formatRg(this.employeerSelected.rg));
     this.filter.get('nomePromotor').setValue(this.employeerSelected.name);
+    this.filter.get('nomeEmpresa').setValue(this.employeerSelected.empresa);
   }
 
   formatRg(rg:string):string{

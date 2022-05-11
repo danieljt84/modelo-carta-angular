@@ -5,4 +5,5 @@ export interface Employee{
     cpf:string;
     serieCtps:string;
     numeroCtps:string;
+    empresa:string;
 }

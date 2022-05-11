@@ -93,6 +93,8 @@ export class CartaAtacadaoComponent implements OnInit {
     this.filter.get('identidade').setValue(this.formatRg(this.employeerSelected.rg));
     this.filter.get('nomePromotor').setValue(this.employeerSelected.name);
     this.filter.get('cpf').setValue(this.formatCpf(this.employeerSelected.cpf));
+    this.filter.get('nomeEmpresa').setValue(this.employeerSelected.empresa);
+
   }
 
   formatRg(rg:string):string{
